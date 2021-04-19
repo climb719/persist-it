@@ -1,1 +1,9 @@
-<h1>My Notes</h1>
+<h1> My Notes</h1>
+
+<% if logged_in?  %>
+  <h3>Logged in as: <%= current_user.name %></h3>
+<% end %>
+
+
+#use method not variable because when method first runs, variable hasn't been defined yet
+#always use method so enures if hasn't been found, looks it up and if has been found, just returns in

@@ -17,4 +17,21 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  helpers do #allows views to acces these method, from view can accesss any methods in helpers so 
+    
+    def logged_in?
+      !!current_user
+    end
+     # singnify will return true or false
+      #double bang turning into true or false value - asking is there a current user
+    
+  
+    def current_user   
+      @current_user ||=  User.find(session[:user_id]) if session[:user_id]
+      # if @current_user return @current_user else set = User.find(session[:user_id)
+      # ||=  insure will only does db look up ones time, because might mention @current_user multiple times in one request
+      # and add if session[user_id] so if someone hasn't loggged doesn't even try
+      end
+    end
+
 end

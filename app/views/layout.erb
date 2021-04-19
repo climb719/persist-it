@@ -16,7 +16,10 @@
   <body>
     <div class="wrapper">
     <nav>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <% if logged_in?  %>
+    <a href="/notes">My Notes</a> | 
+    <a href="/notes/new">Add a new note</a>
+  <% end %>
     </nav>
 
         <%= yield %>

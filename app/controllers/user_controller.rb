@@ -6,8 +6,7 @@ class UserController < ApplicationController
     end
 
     post "/signup" do
-        binding.pry
-        instantiate a user and make sure they signed up with valid data
+        #instantiate a user and make sure they signed up with valid data
         user = User.new(name: params["name"], email: params["email"], password: params["password"])
         if user.name.blank? || user.password.blank? || User.find_by_email(params["email"])
             redirect '/signup' #redirect if invalid login attempt 
@@ -24,8 +23,28 @@ class UserController < ApplicationController
         end
     end
 
-    get '/login' do
+    get '/login' do #get form to login 
         erb :"users/login"
+    end
+
+    post '/login' do #process login 
+        #check if user with that email adress and check is password is correct
+        user = User.find_by_email(params[:email])
+        #use active record method related to has_secure_password, whcih allows to see if pw is correct
+        #instance method to accept password as an argument - and return object if correct or false if not
+        #if User.find does not find a user, user would be nil and can't call .authenticate on nil class
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect '/notes'
+        else
+            redirect '/login'
+        end
+    end
+
+    get '/logout' do
+        session.clear
+        #deletes session so logs them out, vs logging in which creates a session
+        redirect '/'
     end
 
     
