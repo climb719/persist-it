@@ -17,8 +17,10 @@
     <div class="wrapper">
     <nav>
     <% if logged_in?  %>
+    <%= current_user.name%> 
     <a href="/notes">My Notes</a> | 
-    <a href="/notes/new">Add a new note</a>
+    <a href="/notes/new">Add a new note</a> |
+    <a href="/logout">Log Out</a>
   <% end %>
     </nav>
 
