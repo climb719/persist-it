@@ -1,14 +1,24 @@
 <h1> My Notes</h1>
 
-<% if logged_in?  %>
-  <h3>Welcome <%= current_user.name %></h3>
-<% end %>
-<% @notes.each do |n| %>
-    <%=n.title%>
-    <%end%>
+
+
+<% @notes.map do |n| %>
+  <% @notes.group_by{|n| n[:topic]} %>
+  <h3><%=n.topic%></h3> - <a href="/notes/<%=n.id%>"><%=n.title %></a> <br>
+  <%end%>
+ 
+  
+  
 
 
 
 
-#use method not variable because when method first runs, variable hasn't been defined yet
-#always use method so enures if hasn't been found, looks it up and if has been found, just returns in
+
+    
+
+    
+    
+
+
+
+

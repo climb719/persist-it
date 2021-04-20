@@ -1,0 +1,14 @@
+<h1>Edit your note below:</h1>
+
+<form method="post" action="/notes/<%=@note.id %>">
+<input type="hidden" name="_method" value="put">
+Title: <input type="text" name="note[title]" value="<%=@note.title%>">
+Topic: <input type="text" name="note[topic]" value="<%=@note.topic%>" >
+Date: <input type="date" name="note[date]" value="<%=@note.date%>"><br>
+<br>
+
+Content:<br>
+<input class= "longInput" type="textarea" name="note[content]" value="<%=@note.content%>" style="width: 300px;height:300px" > <br>
+<br>
+<input type="submit" value="Update Note">
+</form>
