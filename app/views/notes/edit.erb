@@ -2,13 +2,13 @@
 
 <form method="post" action="/notes/<%=@note.id %>">
 <input type="hidden" name="_method" value="put">
-Title: <input type="text" name="note[title]" value="<%=@note.title%>">
-Topic: <input type="text" name="note[topic]" value="<%=@note.topic%>" >
-Date: <input type="date" name="note[date]" value="<%=@note.date%>"><br>
+Title: <input type="text" name="note[title]" value="<%=@note.title%>" required="true" >
+Topic: <input type="text" name="note[topic]" value="<%=@note.topic%>" required="true">
+Date: <input type="date" name="note[date]" value="<%=@note.date%>" required="true" >
+<input type="submit" value="Update Note"> <br>
 <br>
 
 Content:<br>
-<input class= "longInput" type="textarea" name="note[content]" value="<%=@note.content%>" style="width: 300px;height:300px" > <br>
-<br>
-<input type="submit" value="Update Note">
+<textarea rows="25" cols ="50" required="true" name="note[content]"><%=@note.content%></textarea><br>
+<br> 
 </form>

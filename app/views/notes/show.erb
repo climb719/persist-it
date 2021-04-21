@@ -1,6 +1,18 @@
-<h2>Show page </h2>
-<h3> Title: <%=@note.title%> </hr>
-<p> Topic: <%=@note.topic%> </P> <br>
-Date: <%=@note.date%> <br>
-Content: <%=@note.content%> <br>
+<h2><%=@note.title%> </h2>
+
+<b>Topic:</b> <%=@note.topic%> <br>
+<b>Date:</b> <%=@note.date%> <br>
+<br>
+<b>Content:</b> <%=@note.content%> <br>
+<br>
+
+
+## if this note belogs to current user can display below
+<% if @note.user == current_user%>
 <a href="/notes/<%= @note.id %>/edit">Edit</a> <br>
+<br>
+<form method="post" action="/notes/<%= @note.id %>">
+<input type= "hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete This Note">
+</form>
+<%end%>

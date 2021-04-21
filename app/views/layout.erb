@@ -14,15 +14,16 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
-    <nav>
-    <% if logged_in?  %>
-    <%= current_user.name%> 
-    <a href="/notes">My Notes</a> | 
-    <a href="/notes/new">Add a new note</a> |
-    <a href="/logout">Log Out</a>
+  <nav>
+  <% if logged_in?  %>
+  <b><%= current_user.name%></b> -
+  <a href="/notes">My Notes</a> | 
+  <a href="/notes/new">Add a new note</a> |
+  <a href="/logout">Log Out</a>
   <% end %>
-    </nav>
+  </nav>
+    <div class="wrapper">
+
 
         <%= yield %>
 

@@ -9,16 +9,13 @@ class NoteController < ApplicationController
     end
 
     get '/notes/new' do #to CREATE a note
-        if !logged_in?
-            redirect '/login' #acts like a return, will leave method and won't get to rb or if logged in will skip redirect and go to erb
-        end
-            erb :"notes/new"
+        redirect_if_not_logged_in
+             #acts like a return, will leave method and won't get to rb or if logged in will skip redirect and go to erb
+        erb :"notes/new"
     end
 
     get '/notes/:id' do #READ  get one note
-        if !logged_in? 
-            redirect '/login'
-        end
+        redirect_if_not_logged_in
         @note = Note.find(params["id"])
         erb :"notes/show"
     end
@@ -26,9 +23,8 @@ class NoteController < ApplicationController
 
     post '/notes' do
         #CREATES a new note
-        if !logged_in?
-            redirect '/login' #acts likea return, will leave method and won't get to rb or if logged in will skip redirect and go to erb
-        end #important user can't access if not logged in - protects routest, especailly routes where hit database/add to db
+        redirect_if_not_logged_in #acts likea return, will leave method and won't get to rb or if logged in will skip redirect and go to erb
+         #important user can't access if not logged in - protects routest, especailly routes where hit database/add to db
         note = Note.new(params) 
         #need to associate the note to the user, to associate with current user
         note.user_id = session[:user_id] 
@@ -39,6 +35,7 @@ class NoteController < ApplicationController
 
     get '/notes/:id/edit' do #view a form to update/edit 1 note
         @note = Note.find(params["id"]) #first find note 
+        redirect_unauthorized_user
         # this will display the edit view 
         #id is way to specify what note the user want to see, it's a particular note
         #don't know what id is with note untill saved to db
@@ -47,16 +44,32 @@ class NoteController < ApplicationController
 
     put '/notes/:id' do #update 1 note and db based on the edit form
         @note = Note.find(params["id"]) #id a param -key - comes from route or form. key value pair
-    binding.pry #to access something in a hash use hash beraket notation, need to first find the specif note
+        redirect_unauthorized_user
+        #binding.pry #to access something in a hash use hash beraket notation, need to first find the specif note
     #when any individual note is need, first need to find the note (returns whole note object)
     #then need to display it in a view 
         @note.update(params["note"])
-    erb :"notes/#{@note.id}"
+   redirect "/notes/#{@note.id}"
     end
 
-
     delete '/notes/:id' do
-       @note =  Note.find(params["id]"])
+       @note =  Note.find(params["id"]) #afrer trying to find movie then @movie would be nil and could not run check
+       redirect_unauthorized_user
+       @note.destroy
+       redirect '/notes'
+    end
+
+    private 
+    def redirect_if_not_logged_in
+        if !logged_in?
+          redirect '/login'
+        end
+    end
+
+    def redirect_unauthorized_user  #provate only use internally in other instance methods 
+        if @note.user != current_user #can all share access to instance variable/this method
+            redirect '/notes'  # where to redirect if not logged in??
+        end 
     end
 
 end
