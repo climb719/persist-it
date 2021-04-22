@@ -3,14 +3,16 @@ class NoteController < ApplicationController
     #inherit from AC use in conjuction with main controller we are going to run
     #inherits so can use same info from configure do block and inherit from Sinatra Base and access any helper methods 
     get '/notes' do #READ get all notes
-        @notes = Note.all  #accessing model from controller
+        @notes = current_user.notes.order(:topic)
+        #binding.pry
+        #accessing model from controller
         #passing to view so can render for user
         erb :"notes/index"
     end
 
     get '/notes/new' do #to CREATE a note
         redirect_if_not_logged_in
-             #acts like a return, will leave method and won't get to rb or if logged in will skip redirect and go to erb
+        #acts like a return, will leave method and won't get to erb or if logged in will skip redirect and go to erb
         erb :"notes/new"
     end
 
@@ -19,7 +21,6 @@ class NoteController < ApplicationController
         @note = Note.find(params["id"])
         erb :"notes/show"
     end
-
 
     post '/notes' do
         #CREATES a new note
@@ -46,10 +47,10 @@ class NoteController < ApplicationController
         @note = Note.find(params["id"]) #id a param -key - comes from route or form. key value pair
         redirect_unauthorized_user
         #binding.pry #to access something in a hash use hash beraket notation, need to first find the specif note
-    #when any individual note is need, first need to find the note (returns whole note object)
-    #then need to display it in a view 
+        #when any individual note is need, first need to find the note (returns whole note object)
+        #then need to display it in a view 
         @note.update(params["note"])
-   redirect "/notes/#{@note.id}"
+        redirect "/notes/#{@note.id}"
     end
 
     delete '/notes/:id' do
@@ -66,7 +67,7 @@ class NoteController < ApplicationController
         end
     end
 
-    def redirect_unauthorized_user  #provate only use internally in other instance methods 
+    def redirect_unauthorized_user  #private only use internally in other instance methods 
         if @note.user != current_user #can all share access to instance variable/this method
             redirect '/notes'  # where to redirect if not logged in??
         end 

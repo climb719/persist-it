@@ -1,10 +1,12 @@
-<h1> My Notes</h1>
+<h1> Notes by <%= current_user.name %></h1>
 
 
 
-<% @notes.map do |n| %>
-  <% @notes.group_by{|n| n[:topic]} %>
-  <h3><%=n.topic%></h3> - <a href="/notes/<%=n.id%>"><%=n.title %></a> <br>
+<% @notes.each do |note| %>
+
+ 
+  <%=note.topic%> - <a href="/notes/<%=note.id%>"><%=note.title %></a> <br>
+  
   <%end%>
  
   
