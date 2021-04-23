@@ -1,11 +1,13 @@
 <h1> Notes by <%= current_user.name %></h1>
 
 
-<% @topics.notes each do |note| %>
+<% @notes.each do |note| %>
 
-  <%=note.topic%> - <a href="/notes/<%=note.id%>"><%=note.title %></a> <br>
+ 
+  <%=note.topic_id.name%> - <a href="/notes/<%=note.id%>"><%=note.title %></a> <br>
   
   <%end%>
+ 
  
   
   
