@@ -6,7 +6,6 @@ class NoteController < ApplicationController
         #@notes = current_user.notes
         @topics = current_user.topics.group(:name)
         #binding.pry
-        #binding.pry
         #current_user.notes.order(:topic)
         #accessing model from controller
         #passing to view so can render for user
