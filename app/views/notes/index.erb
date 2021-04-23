@@ -3,10 +3,10 @@
 
 <% @topics.each do |topic| %>
  
-  <b><%=topic.name%> <br> <%topic.notes.each do |note| %> -<a href="/notes/<%=note.id%>"><%=note.title %></a> <br>
-  
+  <b><%=topic.name%> <br> <%topic.notes.each do |note| if note.user == current_user %> -<a href="/notes/<%=note.id%>"><%=note.title %></a> <br>
+  <br>
   <%end%>
-
+  <%end%>
   <%end%>
 
 

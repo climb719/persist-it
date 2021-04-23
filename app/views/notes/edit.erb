@@ -3,7 +3,11 @@
 <form method="post" action="/notes/<%=@note.id %>">
 <input type="hidden" name="_method" value="put">
 Title: <input type="text" name="note[title]" value="<%=@note.title%>" required="true" >
-Topic: <input type="text" name="note[topic]" value="<%=@note.topic.name%>" required="true">
+Topic: <select name="note[topic_id]" required="true">
+<% Topic.all.each do |topic| %>
+    <option value="<%= topic.id %>"><%= @note.topic.name %>  </option>
+    <% end %>
+    </select>        
 Date: <input type="date" name="note[date]" value="<%=@note.date%>" required="true" >
 <input type="submit" value="Update Note"> <br>
 <br>
