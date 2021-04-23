@@ -5,7 +5,7 @@
 Title: <input type="text" name="note[title]" value="<%=@note.title%>" required="true" >
 Topic: <select name="note[topic_id]" required="true">
 <% Topic.all.each do |topic| %>
-    <option value="<%= topic.id %>"><%= @note.topic.name %>  </option>
+    <option value="<%= topic.id %>"><%=topic.name %>  </option>
     <% end %>
     </select>        
 Date: <input type="date" name="note[date]" value="<%=@note.date%>" required="true" >
