@@ -3,7 +3,7 @@
 <form method="post" action="/notes/<%=@note.id %>">
 <input type="hidden" name="_method" value="put">
 Title: <input type="text" name="note[title]" value="<%=@note.title%>" required="true" >
-Topic: <input type="text" name="note[topic]" value="<%=@note.topic%>" required="true">
+Topic: <input type="text" name="note[topic_id]" value="<%=@note.topic%>" required="true">
 Date: <input type="date" name="note[date]" value="<%=@note.date%>" required="true" >
 <input type="submit" value="Update Note"> <br>
 <br>

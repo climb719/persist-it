@@ -2,7 +2,12 @@
 
 <form method="post" action="/notes">
 Title: <input type="text" name="title" required="true">
-Topic: <input type="text" name="topic" required="true">
+Topic:    <select name="topic_id">
+    <% Topic.all.each do |topic| %>
+    <option value="<%= topic.id %>"><%= topic.name %> required="true" </option>
+<% end %>
+</select> 
+        
 Date: <input type="date" name="date" required="true">
 <input type="submit" value="Create Note">
 <br>

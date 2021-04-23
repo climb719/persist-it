@@ -3,15 +3,17 @@ class NoteController < ApplicationController
     #inherit from AC use in conjuction with main controller we are going to run
     #inherits so can use same info from configure do block and inherit from Sinatra Base and access any helper methods 
     get '/notes' do #READ get all notes
-        @notes = current_user.notes.order(:topic)
-        #binding.pry
+        #@notes = current_user.notes
+        @topics = Topic.all.group(:name)
+        #current_user.notes.order(:topic)
         #accessing model from controller
         #passing to view so can render for user
         erb :"notes/index"
     end
 
-    get '/notes/new' do #to CREATE a note
+    get '/notes/new' do #get form to CREATE a note
         redirect_if_not_logged_in
+        
         #acts like a return, will leave method and won't get to erb or if logged in will skip redirect and go to erb
         erb :"notes/new"
     end
@@ -26,7 +28,7 @@ class NoteController < ApplicationController
         #CREATES a new note
         redirect_if_not_logged_in #acts likea return, will leave method and won't get to rb or if logged in will skip redirect and go to erb
          #important user can't access if not logged in - protects routest, especailly routes where hit database/add to db
-        note = Note.new(params) 
+        note = Note.new(params)
         #need to associate the note to the user, to associate with current user
         note.user_id = session[:user_id] 
          #have writer methods from belogs_to and set to the current user who is logged in through the session
