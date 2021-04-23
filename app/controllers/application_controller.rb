@@ -17,6 +17,7 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+
   helpers do #allows views to access these method, from view can accesss any methods in helpers so 
     #especially for accessing our view  and available in any controller 
     def logged_in?

@@ -18,7 +18,7 @@ class UserController < ApplicationController
             #need to keep track on server side who is logged in and every request verifying our logged in user
             #sessions and cookies - where site asks cookies - storing data in your client side application so can verify user or keep track of what you clicked on 
             #sessions keeps track on server side  
-            redirect '/notes'
+            redirect "/notes" 
             #redirect them to where you want them to go first upon login 
         end
     end
