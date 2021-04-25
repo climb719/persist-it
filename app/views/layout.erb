@@ -8,25 +8,22 @@
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
-  <body>
-  <nav>
-  <% if logged_in?  %>
-  <b><%= current_user.name%></b> -
-  <a href="/notes">My Notes</a> | 
-  <a href="/notes/new">Add A New Note</a> |
-  <a href="/logout">Log Out</a>
-  <% end %>
-  </nav>
-    <div class="wrapper">
+    <body>
+      <nav>
+        <% if logged_in?  %>
+        <b><%= current_user.name%></b> -
+        <a href="/notes">My Notes</a> | 
+        <a href="/notes/new">Add A New Note</a> |
+        <a href="/logout">Log Out</a>
+        <% end %>
+      </nav>
+        <div class="wrapper">
+          <%= yield %>
 
-
-        <%= yield %>
-
-      <footer class="branding">
+          <footer class="branding">
         <small>&copy; 2021 <strong>Persist-it</strong></small>
-      </footer>
-    </div>
-
-   
-  </body>
+        </footer>
+        </div> 
+    </body>
+    
 </html>

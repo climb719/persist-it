@@ -1,5 +1,5 @@
 <h1>Edit your note below:</h1>
-
+<br>
 <form method="post" action="/notes/<%=@note.id %>">
 <input type="hidden" name="_method" value="put">
 Title: <input type="text" name="note[title]" value="<%=@note.title%>" required="true" >
@@ -8,11 +8,9 @@ Topic: <select name="note[topic_id]" required="true">
     <option value="<%= topic.id %>"><%=topic.name %>  </option>
     <% end %>
     </select>        
-Date: <input type="date" name="note[date]" value="<%=@note.date%>" required="true" >
-<input type="submit" value="Update Note"> <br>
+Date: <input type="date" name="note[date]" value="<%=@note.date%>" required="true"><br>
 <br>
-
-Content:<br>
-<textarea rows="25" cols ="50" required="true" name="note[content]"><%=@note.content%></textarea><br>
-<br> 
+<p> Content:<br> 
+<textarea rows="25" cols ="50" required="true" name="note[content]"><%=@note.content%></textarea><br> <p/>
+<button class="main1" type = "submit">Update Note</button> 
 </form>

@@ -5,14 +5,12 @@ Title: <input type="text" name="title" required="true">
 Topic: <select name="topic_id" required="true">
     <% Topic.all.each do |topic| %>
     <option value="<%= topic.id %>"><%= topic.name %>  </option>
-<% end %>
-</select>         
-Date: <input type="date" name="date" required="true">
-<input type="submit" value="Create Note">
-<br>
+    <% end %>
+    </select>         
+Date: <input type="date" name="date" required="true"><br>
 <br>
 Content:<br>
 <textarea rows="25" cols ="50" required="true" name="content"></textarea><br>
 <br>
-
+<button class="main1" type = "submit">Create Note</button> 
 </form>

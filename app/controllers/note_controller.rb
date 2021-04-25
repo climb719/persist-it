@@ -3,7 +3,6 @@ class NoteController < ApplicationController
     #inherit from AC use in conjuction with main controller we are going to run
     #inherits so can use same info from configure do block and inherit from Sinatra Base and access any helper methods 
     get '/notes' do #READ get all notes
-       # binding.pry
         @notes = current_user.notes
         @topics = current_user.topics.group(:name)
         #binding.pry
@@ -15,7 +14,6 @@ class NoteController < ApplicationController
 
     get '/notes/new' do #get form to CREATE a note
         redirect_if_not_logged_in
-       
         #acts like a return, will leave method and won't get to erb or if logged in will skip redirect and go to erb
         erb :"notes/new"
     end

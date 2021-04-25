@@ -6,8 +6,6 @@
 <b>Content:</b> <%=@note.content%> <br>
 <br>
 
-
-
 <% if @note.user == current_user%>
 <a href="/notes/<%= @note.id %>/edit">Edit</a> <br>
 <br>

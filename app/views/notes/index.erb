@@ -5,7 +5,7 @@
 <%end%>
 <% @topics.each do |topic| %>
  
-<br><b><%=topic.name%> <br> <%topic.notes.each do |note| if note.user == current_user %> -<a href="/notes/<%=note.id%>"><%=note.title %></a> <br>
+<br><b><%=topic.name%> <br> <%topic.notes.each do |note| if note.user == current_user %> -<a href="/notes/<%=note.id%>"class="newanchor"><%=note.title %></a> <br>
     
 <%end%>
 <%end%>
