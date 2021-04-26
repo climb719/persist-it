@@ -58,8 +58,9 @@
   a:link {
     color: rgb(10, 50, 97);
   }
+
   a:link:hover {
-    color: yellow
+    color: yellow;
   }
 
   a:hover {
