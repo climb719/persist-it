@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, ENV['SESSION_SECRET']
-    #set :show_exceptions, false
+    set :show_exceptions, false
     #default setting show what the exeption is and what is happening to help developer, turn to false so error message works 
     #store in session who is logged in and a cookie on client side to store session and 
     #every request verify that their cookie matches session 
