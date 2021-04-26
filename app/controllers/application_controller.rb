@@ -40,12 +40,11 @@ class ApplicationController < Sinatra::Base
     
   
     def current_user   
-      @current_user ||=  User.find(session[:user_id]) if session[:user_id]
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
       # if @current_user return @current_user else set = User.find(session[:user_id)
       # ||=  insure will only does db look up ones time, because might mention @current_user multiple times in one request
       # and add if session[user_id] so if someone hasn't loggged doesn't even try
       end
     end
-
 
 end
