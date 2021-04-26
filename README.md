@@ -22,8 +22,8 @@ To enable sessions, which is a record of the users actions between login and log
 1. Create a .env file in the root directory.
 2. In .env add the following, replacing the string ABC123 with a secret word or string.
 
-SESSION_SECRET="ABC123"
-Commit .gitignore
+    SESSION_SECRET="ABC123"
+    Commit .gitignore
 
 Note: Since the .env file contains sensitive information, it is important that it is not tracked, committed or pushed to Github. 
 
