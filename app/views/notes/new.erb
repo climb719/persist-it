@@ -7,10 +7,10 @@ Topic: <select name="topic_id" required="true">
     <option value="<%= topic.id %>"><%= topic.name %>  </option>
     <% end %>
     </select>         
-Date: <input type="date" name="date" required="true"><br>
+Date: <input type="date" name="date" required="true" class="formButtons"><br>
 <br>
 Content:<br>
 <textarea rows="25" cols ="50" required="true" name="content"></textarea><br>
 <br>
-<button class="main1" type = "submit">Create Note</button> 
+<input type="submit" value="Create My Note">
 </form>

@@ -1,0 +1,12 @@
+<h4> Sorry, this page doesn't exits!</h4> <br>
+
+<% if logged_in?%> <%=current_user.name%> - Where would you like to go? </b> <br>
+<br>
+<a href="/notes">See all my notes</a> <br>
+
+<a href="/notes/new">Create a new note</a> <br>
+
+<a href="/logout">Log me out for now</a>
+
+<% else %> <a href="/signup">Sign Up</a> OR <a href="/login">Log In</a> 
+<% end %>

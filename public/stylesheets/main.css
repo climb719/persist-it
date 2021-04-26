@@ -12,53 +12,63 @@
   }
 
   
-  .button {
+  button[type=buttons]{
     background-color: #b8b8b8;; 
     border: none;
     color: black;
     border: 2px solid #201296;
     border-radius: 12px;
-    padding: 15px 32px;
+    padding: 3px 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 13px;
     transition-duration: 0.4s
   }
 
-  .button:hover {
+  button[type=buttons]:hover {
     background-color: #32f3c9; 
     color: #b8b8b8;
   }
 
-  input[type=submit] {
-  padding: 5px 15px;
-  background: #c1f0d1;
-  border: 2px solid #201296;
-  cursor: pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 50%;
-  transition-duration: 0.4s
-}
 
-input[type=submit]:hover {
-  background-color:  #056b6b;
-  color: #c1f0d1;
-}
-
-.main1{ 
-	margin-left: 10px; 
-} 
-
-.newanchor:link {
-  color:maroon;
-  text-decoration:none;
-  }
-  
-  .newanchor:hover{
+.newanchor:hover {
   color:yellow;
   }  
 
+  input[type=submit] {
+    padding: 5px 15px;
+    background: #c1f0d1;
+    border: 2px solid #201296;
+    cursor: pointer;
+    -webkit-border-radius: 20px;
+    border-radius: 70%;
+    transition-duration: 0.4s
+  }
+  
+  input[type=submit]:hover {
+    background-color:  #056b6b;
+    color: #c1f0d1;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  a:link {
+    color: rgb(10, 50, 97);
+  }
+  a:link:hover {
+    color: yellow
+  }
+
+  a:hover {
+    color:yellow;
+  }
+
+  a:visited {
+    color: rgb(100, 11, 216);
+  }
 
   /* --- Welcome Page Styles --- */
   body {
@@ -67,15 +77,6 @@ input[type=submit]:hover {
     font-family: Sans-Serif;
     line-height: 18px;
   }
-
-  nav {
-    text-align: center;
-  }
-
-  nav:hover{
-    color:yellow;
-  }
-    
 
   .wrapper {
     background: rgb(106, 165, 160);
