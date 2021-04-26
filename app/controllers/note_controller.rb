@@ -6,7 +6,6 @@ class NoteController < ApplicationController
         redirect_if_not_logged_in
         @notes = current_user.notes
         @topics = current_user.topics.group(:name)
-      
         #binding.pry
         #current_user.notes.order(:topic)
         #accessing model from controller
