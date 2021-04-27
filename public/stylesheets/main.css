@@ -17,11 +17,11 @@
     color: black;
     border: 2px solid #201296;
     border-radius: 12px;
-    padding: 3px 7px;
+    padding: 2px 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 13px;
+    font-size: 12px;
     transition-duration: 0.4s
   }
 
@@ -131,6 +131,7 @@
     float: top;
   }
 
+
   #ink {
     position: absolute;
     top: 243px;
@@ -171,17 +172,30 @@
     font-family: "American Typewriter", serif;
   }
 
-  .sidebar {
-    background: rgb(206, 203, 198);
-    border: 3px solid tan;
-    float: right; 
-    padding: 3.08333333333%; /* 5px / 240px */
-    margin-bottom: 3%;
-    width: 30%; /* 240px / 800px */
+  
+  #notepad {
+    position: absolute;
+    top: 35px;
+    right: 295px;
+    width: 15%;
+    float: top;
+    transform: rotate(28deg);
   }
 
-  .sidebar ul {
-    font-size: 14px;
+  .sidebar .login {
+    position: absolute;
+    top: 17%;
+    left: 73.7%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+
+  .sidebar .signup {
+    position: absolute;
+    top: 26%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
   }
 
   .branding {
@@ -208,13 +222,7 @@
     width: 100%;
   }
 
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
-  }
-
+ 
   h2 {
     font-size: 18px;
     line-height: 24px;
