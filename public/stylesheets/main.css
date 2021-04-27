@@ -97,13 +97,14 @@
     font-family: "Optima", sans-serif;  
     font-size: 36px;
     line-height: 54px;
-    text-align: left; 
+    text-align: center; 
   }
 
   #quote {
     top: 0;
     right: 0;
-    text-align: right;
+    text-align: center;
+    font-size: 20px;
     font-family: 'Brush Script MT', cursive;
   }
 
@@ -131,6 +132,7 @@
   .content {
     float: left;
     width: 60%; /* 480px / 800px */
+    padding-bottom: 2%;
   }
 
   .content > p {
@@ -141,8 +143,8 @@
     background: #eee;
     border: 1px solid #ccc;
     float: right; 
-    padding: 2.08333333333%; /* 5px / 240px */
-    margin-bottom: 5%;
+    padding: 3.08333333333%; /* 5px / 240px */
+    margin-bottom: 3%;
     width: 30%; /* 240px / 800px */
   }
 
