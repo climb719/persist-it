@@ -81,10 +81,11 @@
 
   #pen {
     display: flex;
-    border-radius: 8px;
+    border-radius: 12px;
     width: 35%;
     float: right;
     margin-bottom: 3%;
+    
   }
 
   /* --- Welcome Page Styles --- */
@@ -122,6 +123,24 @@
   }
 
 
+  #scraps {
+    position: absolute;
+    top: 25px;
+    left: 265px;
+    width: 15%;
+    float: top;
+  }
+
+  #ink {
+    position: absolute;
+    top: 243px;
+    left: 550px;
+    width: 8%;
+    float: top;
+ 
+  }
+
+
   h2 {
     border-bottom: 2px solid #ccc;
     font-size: 24px;
@@ -153,8 +172,8 @@
   }
 
   .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
+    background: rgb(206, 203, 198);
+    border: 3px solid tan;
     float: right; 
     padding: 3.08333333333%; /* 5px / 240px */
     margin-bottom: 3%;
@@ -170,7 +189,7 @@
   }
 
   footer.branding {
-    border-top: 2px solid #ccc;
+    border-top: 2px solid tan;
     margin-top: 40px;
     padding-top: 20px;
   }
