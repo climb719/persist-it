@@ -100,8 +100,8 @@
     text-align: center;
   }
 
-  span .firstquote {
-    position: absolute, right; 
+  .quote {
+   text-align: right;
   }
 
   h2 {
