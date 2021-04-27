@@ -62,6 +62,10 @@
     color: yellow;
   }
 
+  nav a:hover {
+    color: yellow;
+  }
+
   a:hover {
     color:yellow;
   }
@@ -93,6 +97,7 @@
     font-family: "Apple Chancery", cursive;  
     font-size: 36px;
     line-height: 54px;
+    text-align: center;
   }
 
   h2 {
