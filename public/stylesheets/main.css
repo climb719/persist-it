@@ -85,9 +85,21 @@
     width: 35%;
     float: right;
     margin-bottom: 3%;
-    
   }
 
+  #welcome {
+    position: absolute;
+    top: 25px;
+    left: 265px;
+    width: 15%;
+    margin-bottom: 3%;
+    opacity: 0.25;
+  }
+
+  #welcome:hover {
+    opacity: 1.0;
+  }
+ 
   /* --- Welcome Page Styles --- */
   body {
     background-color: lightblue;
@@ -107,7 +119,7 @@
     width: 85%;
   }
 
-  #welcome {
+  #title {
     font-family: "Optima", sans-serif;  
     font-size: 36px;
     line-height: 54px;
@@ -122,6 +134,14 @@
     font-family: 'Brush Script MT', cursive;
   }
 
+  #author {
+    position: absolute;
+    top: 25px;
+    left: 265px;
+    font-size: 20px;
+    font-family: 'Brush Script MT', cursive;
+  }
+
 
   #scraps {
     position: absolute;
@@ -129,6 +149,11 @@
     left: 265px;
     width: 15%;
     float: top;
+    opacity: 0.25;
+  }
+
+  #scraps:hover {
+    opacity: 1.0;
   }
 
 
@@ -138,7 +163,7 @@
     left: 550px;
     width: 8%;
     float: top;
- 
+
   }
 
 

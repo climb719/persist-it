@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   error ActiveRecord::RecordNotFound do
     erb :"users/error"
   end
-  #rescue for roecord not found telling routes when this is what to do with error not display error page, so redirect 
+  #rescue for record not found, telling routes when this is what to do with error not display error page, so redirect 
 
   helpers do #allows views to access these method, from view can accesss any methods in helpers so 
     #especially for accessing our view  and available in any controller 
