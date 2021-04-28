@@ -223,9 +223,6 @@
     opacity: 0.45;
   }
 
-  #notepad:hover {
-    opacity: 1.0;
-  }
 
   .sidebar .login {
     position: absolute;
