@@ -89,12 +89,13 @@
 
   #welcome {
     position: absolute;
-    top: 35px;
-    right: 295px;
-    width: 15%;
+    top: 40px;
+    right: 20%;
+    width: 14%;
     float: right;
     margin-bottom: 3%;
-    opacity: 0.25;
+    opacity: 0.35;
+    transform: rotate(-35deg);
   }
 
   #welcome:hover {
@@ -103,12 +104,12 @@
 
   #languages  {
     position: absolute;
-    top: 35px;
-    right: 295px;
-    width: 15%;
+    top: 17%;
+    right: 20%;
+    width: 17%;
     float: right;
     margin-bottom: 3%;
-    opacity: 0.25;
+    opacity: 0.50;
   }
 
  
@@ -132,14 +133,14 @@
   }
 
   
-  #title {
+  .title {
     font-family: "Optima", sans-serif;  
     font-size: 36px;
     line-height: 54px;
     text-align: center; 
   }
 
-  #quote {
+  .quote1 {
     top: 0;
     right: 0;
     text-align: center;
@@ -148,9 +149,10 @@
   }
 
 
-  #author {
-    top: 10;
-    right: 20;
+  .author1 {
+    position:absolute;
+    top:126px;
+    right:41%; 
     font-size: 20px;
     font-family: 'Brush Script MT', cursive;
   }
@@ -160,9 +162,9 @@
     position: absolute;
     top: 25px;
     left: 265px;
-    width: 15%;
+    width: 17%;
     float: top;
-    opacity: 0.25;
+    opacity: 0.35;
   }
 
   #scraps:hover {
@@ -213,16 +215,21 @@
   
   #notepad {
     position: absolute;
-    top: 35px;
+    top: 37px;
     right: 295px;
     width: 15%;
     float: top;
     transform: rotate(28deg);
+    opacity: 0.45;
+  }
+
+  #notepad:hover {
+    opacity: 1.0;
   }
 
   .sidebar .login {
     position: absolute;
-    top: 17%;
+    top: 18%;
     left: 73.7%;
     transform: translate(-50%, -50%);
     z-index: 999;
@@ -230,7 +237,7 @@
 
   .sidebar .signup {
     position: absolute;
-    top: 26%;
+    top: 27%;
     left: 73%;
     transform: translate(-50%, -50%);
     z-index: 999;
@@ -242,8 +249,8 @@
 
   footer.branding {
     border-top: 2px solid tan;
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 30px;
+    padding-top: 15px;
   }
 }
 

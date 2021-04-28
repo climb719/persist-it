@@ -1,5 +1,5 @@
-<h2> Notes by <%=current_user.name%></h2><br>
-<img id="languages" src="https://cdn.pixabay.com/photo/2016/05/10/13/17/notepad-1383707_960_720.png" alt="notes in different languages">
+<h2> Notes by <%=current_user.name%></h2>
+
 <% if current_user.notes.empty?%> 
 <h4 class="new">Looks like you haven't created any notes yet, please start adding your notes <a href="/notes/new">HERE</a> </h4>
 
