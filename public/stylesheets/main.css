@@ -89,9 +89,10 @@
 
   #welcome {
     position: absolute;
-    top: 25px;
-    left: 265px;
+    top: 35px;
+    right: 295px;
     width: 15%;
+    float: right;
     margin-bottom: 3%;
     opacity: 0.25;
   }
@@ -99,6 +100,17 @@
   #welcome:hover {
     opacity: 1.0;
   }
+
+  #languages  {
+    position: absolute;
+    top: 35px;
+    right: 295px;
+    width: 15%;
+    float: right;
+    margin-bottom: 3%;
+    opacity: 0.25;
+  }
+
  
   /* --- Welcome Page Styles --- */
   body {
@@ -119,6 +131,7 @@
     width: 85%;
   }
 
+  
   #title {
     font-family: "Optima", sans-serif;  
     font-size: 36px;
@@ -134,10 +147,10 @@
     font-family: 'Brush Script MT', cursive;
   }
 
+
   #author {
-    position: absolute;
-    top: 25px;
-    left: 265px;
+    top: 10;
+    right: 20;
     font-size: 20px;
     font-family: 'Brush Script MT', cursive;
   }
