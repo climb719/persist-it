@@ -4,7 +4,7 @@
 <h4 class="new">Looks like you haven't created any notes yet, please start adding your notes <a href="/notes/new">HERE</a> </h4>
 <%end%>
 
-<% @topics.each do |topic| %>
+<% @notes.each do |topic| %>
 <br><b><%=topic.name%> <br> <%topic.notes.each do |note| if note.user == current_user %> -<a href="/notes/<%=note.id%>"class="newanchor"><%=note.title %></a> <br>
 <%end%>
 <%end%>

@@ -12,7 +12,7 @@ I am one of those people who actually loves taking notes. Unfortunately, I don't
 1. Fork the repository
 2. Clone the files to your computer
 3. Run `bundle install`
-4. Run `rake db:migrate`
+4. Run `rake db:migrate` or to create the application database on another system, you should use `rake db:schema:load`
 5. Run `shotgun` to start the server
 
 ## Enabling Sessions
