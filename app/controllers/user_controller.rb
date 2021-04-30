@@ -46,4 +46,5 @@ class UserController < ApplicationController
         #deletes session so logs them out, vs logging in which creates a session
         redirect '/'
     end
+
 end

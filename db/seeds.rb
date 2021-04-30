@@ -1,4 +1,3 @@
-#code to run one time to create objects
 Topic.create(name: "Appointments")
 Topic.create(name: "Career")
 Topic.create(name: "Education")

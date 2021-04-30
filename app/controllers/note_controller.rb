@@ -4,7 +4,7 @@ class NoteController < ApplicationController
     #inherits so can use same info from configure do block and inherit from Sinatra Base and access any helper methods 
     get '/notes' do #READ get all notes
         redirect_if_not_logged_in
-        @notes = current_user.notes
+       # @notes = current_user.notes
         @topics = current_user.topics.group(:name)
         #binding.pry
         #current_user.notes.order(:topic)
@@ -46,7 +46,7 @@ class NoteController < ApplicationController
         erb :"notes/edit"
     end
 
-    put '/notes/:id' do #update 1 note and db based on the edit form
+    patch '/notes/:id' do #update 1 note and db based on the edit form
         @note = Note.find(params["id"]) #id a param -key - comes from route or form. key value pair
         redirect_unauthorized_user
         #binding.pry #to access something in a hash use hash beraket notation, need to first find the specif note
@@ -64,16 +64,18 @@ class NoteController < ApplicationController
     end
 
     private 
-    def redirect_if_not_logged_in
-        if !logged_in?
-          redirect '/login'
-        end
-    end
 
     def redirect_unauthorized_user  #private only use internally in other instance methods 
         if @note.user != current_user #can all share access to instance variable/this method
             redirect '/notes'  # where to redirect if not logged in??
         end 
     end
+
+    def redirect_if_not_logged_in
+        if !logged_in?
+          redirect '/login'
+        end
+    end
+
 
 end

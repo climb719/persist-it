@@ -1,8 +1,7 @@
 <h1>Edit your note below:</h1>
 <br>
-
 <form method="post" action="/notes/<%=@note.id %>">
-<input type="hidden" name="_method" value="put">
+<input type="hidden" name="_method" value="patch">
 Title: <input type="text" name="note[title]" value="<%=@note.title%>" required="true" >
 Topic: <select name="note[topic_id]" required="true">
 <% Topic.all.each do |topic| %>

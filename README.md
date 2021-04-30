@@ -20,9 +20,9 @@ I am one of those people who actually loves taking notes. Unfortunately, I don't
 To enable sessions, which is a record of the users actions between login and logout, and allow the code to work with your session password take the following steps:
 
 1. Create a .env file in the root directory.
-2. In .env add the following, replacing the string ABC123 with a secret word or string.
+2. In .env add the following, replacing the string "password" with a secret word or string.
 
-    SESSION_SECRET="ABC123"
+    SESSION_SECRET="password"
 
     Commit .gitignore
 
